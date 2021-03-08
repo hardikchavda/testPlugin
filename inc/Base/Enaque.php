@@ -8,7 +8,9 @@
 
 namespace Inc\Base;
 
-class Enaque
+use \Inc\Base\BaseController;
+
+class Enaque extends BaseController
 {
     function register()
     {
@@ -20,7 +22,7 @@ class Enaque
 
     function enqueue()
     {
-        wp_enqueue_style('mypluginstyle', PLUGIN_URL . '/assets/my_style.css', __FILE__);
-        wp_enqueue_script('mypluginscript', PLUGIN_URL .'/assets/my_script.js', __FILE__);
+        wp_enqueue_style('mypluginstyle', $this->plugin_url . '/assets/my_style.css', __FILE__);
+        wp_enqueue_script('mypluginscript', $this->plugin_url .'/assets/my_script.js', __FILE__);
     }
 }

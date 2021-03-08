@@ -15,7 +15,8 @@ final class Init
     {
         return [
             Page\Admin::class,
-            Base\Enaque::class
+            Base\Enaque::class,
+            Base\SettingsLinks::class
         ];
     }
 

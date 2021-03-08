@@ -29,8 +29,21 @@ if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
     require_once dirname(__FILE__) . '/vendor/autoload.php';
 }
 
-define('PLUGIN_PATH', plugin_dir_path(__FILE__));
-define('PLUGIN_URL', plugin_dir_url(__FILE__));
+use Inc\Base\Activate;
+use Inc\Base\Deactivate;
+
+
+function activate_hrdk_plugin()
+{
+    Activate::activate();
+}
+register_activation_hook(__FILE__, array('activate_hrdk_plugin'));
+function deactivate_hrdk_plugin()
+{
+    Deactivate::deactivate();
+}
+register_deactivation_hook(__FILE__, array('deactivate_hrdk_plugin'));
+
 
 if (class_exists('Inc\\Init')) {
 

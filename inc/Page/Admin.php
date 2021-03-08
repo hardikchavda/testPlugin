@@ -7,7 +7,9 @@
 
 namespace Inc\Page;
 
-class Admin
+use \Inc\Base\BaseController;
+
+class Admin extends BaseController
 {  
     function register()
     {
@@ -22,6 +24,6 @@ class Admin
 
     function admin_index()
     {
-        require_once PLUGIN_PATH . 'templates/hrdksettings.php';
+        require_once $this->plugin_path . 'templates/hrdksettings.php';
     }
 }
